@@ -1,0 +1,30 @@
+general:
+    resource: "routes/general.yaml"
+    prefix:   /{_locale}
+    requirements:
+      _locale: en|fr
+
+user:
+    resource: "routes/user.yaml"
+    prefix:   /{_locale}
+    requirements:
+      _locale: en|fr
+
+page:
+    resource: "routes/page.yaml"
+    prefix:   /{_locale}
+    requirements:
+      _locale: en|fr
+
+referencement:
+    resource: "routes/referencement.yaml"
+    prefix:   /{_locale}
+    requirements:
+      _locale: en|fr
+
+redirect_rules_nolocal:
+    path:  /
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+        path: /fr/
+        permanent: true
